@@ -3,6 +3,7 @@ package src;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Locale;
 import java.util.Scanner;
 import javax.imageio.IIOException;
 import javax.imageio.ImageIO;
@@ -13,9 +14,12 @@ public class Practice {
         Scanner sc = new Scanner(System.in);
 
         // Filtering all the inputs to check for validation
-        while(sc.hasNext()){
+        while(true){
             try{
+                System.out.println("Please Provide a file path");
                 String input = sc.nextLine();
+                if(input.toLowerCase().equals("exit"))
+                    break;
                 // Checking if input is null
                 if (input.trim().isEmpty()) {
                     continue;
